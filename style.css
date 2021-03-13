@@ -19,7 +19,7 @@ html, body {
 }
 
 .content {
-    background-color: white;
+    text-align: justify;
     overflow:hidden;
     /*border-width: 1px;
     border-style: solid;
@@ -28,7 +28,7 @@ html, body {
 
 
 .footer {
-    font-size: 14px;
+    font-size: 12px;
     color: black;
     bottom:0;
     width: auto;
