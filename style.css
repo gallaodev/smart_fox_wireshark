@@ -13,17 +13,17 @@ html, body {
     background-color: white;
     width:auto;
     height: auto;
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: black;*/
 }
 
 .content {
     background-color: white;
     overflow:hidden;
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: black;*/
 }
 
 
@@ -31,9 +31,9 @@ html, body {
     bottom:0;
     width: auto;
     background-image: linear-gradient(to bottom, white, rgb(192, 192, 192));
-    border-width: 1px;
+    /*border-width: 1px;
     border-style: solid;
-    border-color: black;
+    border-color: black;*/
 }
 
 /* IMAGENS E CONTEUDO*/
@@ -41,8 +41,8 @@ html, body {
 .fox{
     margin-block-start: 2%;
     margin-inline: 1%;
-    height: 40%;
-    width:  30%;
+    height:25%;
+    width: 25%;
 }
 
 h2.titulos_laranjas{
@@ -52,9 +52,11 @@ h2.titulos_laranjas{
 .light{
     color: black;
     background-color:white;
+    margin: 2%;
 }
 
 .dark{
     color:white;
     background-color: black;
+    margin: 2%;
 }
