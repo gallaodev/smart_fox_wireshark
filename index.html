@@ -17,7 +17,7 @@
         <input class="dark"  type="button" value="Mudar tema para dark"  onclick="dark()"> 
     </header>
     <article class="content" id="content">
-      <h2 id="titulos_1">
+      <h2 class="titulos" id="titulos">
       Você usa o wireshark? Ja teve dificuldades para montar um filtro? Sabia que é possivel montar gráficos no wireshark? Abaixo algumas dicas que podem te ajudar nestes assunto...
       </h2><br>
         <p class="paragraf">
@@ -47,14 +47,88 @@
           <li>Filtrando o protocolo TCP com um source port especifico: tcp.srcport == 1147 </li>
        </ul><br>
       <p class="paragraf">São muitas formas de fazer concorda, e mesmo com o wireshark te ajudando a completar os filtros voce ainda pode se perder neles. Sendo assim existe uma forma mais facil ainda de montar os filtros. Na area onde ficam as informações de um pacote em modo texto voce pode escolher um campo, selecionar simplemente clicando com botão esquerdo e clicando com botão direito escolher a opção aplicar um filtro e depois selecionado, pronto basta voce manipular operadores logicos e valor e voce com certeza vai chegar no valor procurado.</p><br>
-      <p>Selecione o campo com o botão esquerdo do mouse:</p><br>
+      <p class="paragraf">Selecione o campo com o botão esquerdo do mouse:</p><br>
       <img src="imagens/selecionar.PNG" alt="selecionar"><br>
-      <p>Sobre o campo selecionado clicar com o botão direito e escolher, aplicar filtro e então selecionar (existem outras opçõesw como voces podem ver na imagem abaixo):</p><br>
+      <p class="paragraf">Sobre o campo selecionado clicar com o botão direito e escolher, aplicar filtro e então selecionar (existem outras opçõesw como voces podem ver na imagem abaixo):</p><br>
       <img src="imagens/escolher.PNG" alt="escolher">
       <h2 class="titulos" id="titulos">
-       Para auxliar com os operadores logicos, segue uma tabela para consulta rapida:
+       Para auxliar com os operadores logicos, segue uma tabela para consulta rapida.
       </h2><br>
-      <div class="titulos"> TABELA OLOGICO</div><br>  
+      <table class="paragraf">
+          <tr>
+            <th>DESCRIPTION</th>
+            <th>SYMBOL</th>
+            <th>TEXT</th>
+          </tr>
+
+          <tr>
+            <td>equal to</td>
+            <td>==</td>
+            <td>eq</td>
+          </tr>
+
+          <tr>
+            <td>or</td>
+            <td> | </td>
+            <td> or</td>
+          </tr>
+
+          <tr>
+            <td>and</td>
+            <td>&&</td>
+            <td>and</td>
+          </tr>
+
+          <tr>
+            <td>greather than</td>
+            <td> > </td>
+            <td> gt</td>
+          </tr>
+
+          <tr>
+            <td>less than</td>
+            <td> < </td>
+            <td> lt</td>
+          </tr>
+
+          <tr>
+            <td>greather than or equal to</td>
+            <td> >= </td>
+            <td> ge</td>
+          </tr>
+
+          <tr>
+            <td>less than or equal to</td>
+            <td> <=></td>
+            <td> le</td>
+          </tr>
+
+          <tr>
+            <td>not</td>
+            <td>!</td>
+            <td>not</td>
+          </tr>
+
+          <tr>
+            <td>not equals to</td>
+            <td>!=</td>
+            <td>ne</td>
+          </tr>
+
+          <tr>
+            <td>contains</td>
+            <td></td>
+            <td>contains</td>
+          </tr>
+
+          <tr>
+            <td>matches</td>
+            <td></td>
+            <td>matches</td>
+          </tr>
+
+          </tr>
+      </table><br>  
       <h2 class="titulos">
         É possivel de forma bem simples gerar graficos no wireshark
       </h2><br>
@@ -63,11 +137,13 @@
       <h2 class="titulos">
            Segue abaixo um passo a passo para criação:
       </h2><br>
-      <ul class="lista">
-        <li>um</li>
-        <li>dois</li>
-        <li>tres</li>
-    </ul><br>
+      <ol class="lista">
+        <li>Escolha na barra de ferramentas Estatisticas.</li>
+        <li>Escolha a opção Graficos I/O</li>
+        <li>Vai aparece uma caixa para edição de graficos</li>
+        <li>Crie linhas para o seu grafico indicando cores e filtros (ja mencionei acima como fazer), cada filtro ira representar uma linha com uma cor diferente no seu grafico</li>
+        <li>Use sua criatividade para criar diferentes graficos e mostrar de forma mais simples uma ideia, teoria ou fato!</li>
+    </ol><br>
         <div class="titulos"> PASSO A PASSO COM FOTOS</div><br>       
     </article><br>
     <footer  class="footer" id="footer">
@@ -87,15 +163,15 @@
         var i;
                 
         for (i = 0; i < t.length; i++) {
-        t[i].style.color = "black",
+        t[i].style.color = "rgb(53, 53, 53)",
         t[i].style.background = "white"}
         
         for (i = 0; i < p.length; i++) {
-        p[i].style.color = "black",     
+        p[i].style.color = "rgb(53, 53, 53)",     
         p[i].style.background = "white"}
 
         for (i = 0; i < l.length; i++) {
-        l[i].style.color = "black",
+        l[i].style.color = "rgb(53, 53, 53)",
         l[i].style.background = "white"}
        
         h.style.background = "white"

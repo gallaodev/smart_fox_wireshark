@@ -43,11 +43,11 @@ footer{
 }
 
 .titulos{
-    color:black;
+    color:rgb(53, 53, 53);
 }
 
 #titulos_1{
-    color: #FD8239;
+    color: rgb(53, 53, 53);
 }
 
 .light{
@@ -58,7 +58,7 @@ footer{
 
 .dark{
     color:white;
-    background-color: black;
+    background-color: #5a5379;
     margin: 2%;
 }
 
@@ -68,4 +68,14 @@ footer{
 }
 .paragraf{
     text-indent: 2em;
+}
+table{
+    border: 1px solid black;
+}
+
+td{
+    border: 1px solid black;
+}
+th{
+    border: 1px solid black;
 }
