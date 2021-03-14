@@ -6,8 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imagens/fox_favi.ico" type="">
-    <style> @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');</style>
-    <script type=text/javascript src="main.js"></script>
+    <style> @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+    </style>
   </head>
 
 <body class="body" id="corpo">
@@ -17,36 +17,61 @@
         <input class="dark"  type="button" value="Mudar tema para dark"  onclick="dark()"> 
     </header>
     <article class="content" id="content">
-      <h2 class="titulos" id="titulos">
-      Você sabia que é possivel criar graficos no Wireshark?
+      <h2 id="titulos_1">
+      Você usa o wireshark? Ja teve dificuldades para montar um filtro? Sabia que é possivel montar gráficos no wireshark? Abaixo algumas dicas que podem te ajudar nestes assunto...
       </h2><br>
         <p class="paragraf">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin augue erat, ullamcorper pulvinar malesuada ultricies, mollis non magna. Curabitur quis nisi ut ligula ultricies gravida. Suspendisse elit justo, vulputate in facilisis sed, tristique id nisi. Maecenas risus quam, suscipit eu vehicula ut, ultricies in neque. Donec gravida tristique turpis ut interdum. Donec lacinia nisi id enim lacinia sit amet facilisis est ullamcorper. Curabitur ipsum libero, sollicitudin nec rhoncus quis, congue non ipsum. Etiam at eros dolor. Mauris non erat vitae leo faucibus fermentum. In consectetur, diam eget faucibus dignissim, urna justo pretium dui, nec eleifend neque velit vitae odio. Nam et tristique turpis. In dictum commodo sem ut dignissim. In convallis quam non tortor posuere sed ornare nulla pulvinar. Suspendisse placerat turpis in tortor rutrum nec mollis nulla posuere. Integer tellus est, rhoncus ut sagittis eget, mattis a velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque gravida posuere orci nec ornare. Donec elit nulla, aliquam eget cursus a, commodo sed odio. 
+            É normal ter algumas dificuldades quando você começa a usar o wireshark.
+        Ler um arquivo pcap de uma captura ou mesmo capturar em tempo real os pacotes é o minimo que você deve conseguir fazer para começar a interpretar os dados, acredito que poucos tem dificuldades com isso. <br>
+        O proximo passo é fazer alguns filtros para localizar pacotes especificos para sua analise, filtrar um protocolo e um ip é relativamente simples, mas em poucos minutos voce descobre que isso não ajuda muito no caso de capturas um pouco mais longas, dai surge a necessidade de filtros mais especificos...
         </p><br>
       <h2 class="titulos" id="titulos">
-            Um pequeno resumo sobre filtros...
+            Antes de filtrar é importante saber como o filtro funciona.
       </h2><br>
         <p class="paragraf">
-        Duis id metus enim, sed dignissim magna. Quisque dapibus pulvinar diam eget adipiscing. Ut aliquet ipsum quis lorem elementum lacinia. Vestibulum feugiat ultrices orci, vel sollicitudin nibh rutrum eu. In gravida tincidunt ornare. Aenean vestibulum leo eu orci egestas semper. Proin euismod dapibus tempor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse rutrum purus eget lectus ultricies a consectetur ante laoreet. Phasellus ullamcorper gravida risus vitae convallis. Curabitur ante lorem, faucibus in tincidunt quis, ullamcorper at lectus. Fusce fermentum blandit varius. Donec a quam id massa bibendum commodo sit amet vel felis. Sed magna nibh, convallis nec dignissim non, vestibulum adipiscing ipsum. Mauris cursus fringilla tortor eu feugiat. Vivamus vestibulum dapibus justo, porttitor luctus nisi posuere at. Nunc mi elit, suscipit id venenatis at, suscipit nec purus. Donec malesuada fringilla tempor. Pellentesque vehicula diam a magna commodo sagittis. Nulla facilisi. 
+        O Wireshark usa a tecnologia <strong>BPF - Berkeley Packet Filter</strong> e os campos de filtros podem ser divididos em: 
+        </p><br>
+        <ul class="lista">
+            <li>Identifiers - Dados que representam as camadas TCP/IP e também os protocolos. </li>
+            <li>Qualifiers - Dados que subdivivem as camadas, podem ou não ser usado nos filtros. <br> Alguns exemplos são: Type (host, port, net), Direction (src, dst) e Proto (TCP or UDP).</li>
+            <li>Logic Operators - São utilizados para definir as regras do filtro com realção aos values.</li>
+            <li>Values - Valores que você deseja filtrar, podem ou nao ser usados nos filtros. </li>
+        </ul><br>
+      <h2 class="titulos">
+      Exemplos de filtros
+      </h2><br>
+      <p class="paragraf">A montagem dos filtros é feita pela seguinte syntax: [identifiers][.][qualifiers][logic operators][value], o wireshark faz um check na syntax e coloca uma cor de fundo no campo de syntax para te auxliar, sendo verde para ok e vermelhor para nok.</p><br>
+      <ul class="lista">
+          <li>Filtrando um ip de origem com valor 10.0.0.1: ip.src == 10.0.0.1 </li>
+          <li>Filtrando um ip com protocolo na porta 53: ip.proto == 53, lembrando que para filtrar o protocolo direto sem o IP podemos usar ele como identifier</li>
+          <li>Filtrando o protocolo TCP com um source port especifico: tcp.srcport == 1147 </li>
+       </ul><br>
+      <p class="paragraf">São muitas formas de fazer concorda, e mesmo com o wireshark te ajudando a completar os filtros voce ainda pode se perder neles. Sendo assim existe uma forma mais facil ainda de montar os filtros. Na area onde ficam as informações de um pacote em modo texto voce pode escolher um campo, selecionar simplemente clicando com botão esquerdo e clicando com botão direito escolher a opção aplicar um filtro e depois selecionado, pronto basta voce manipular operadores logicos e valor e voce com certeza vai chegar no valor procurado.</p><br>
+      <p>Selecione o campo com o botão esquerdo do mouse:</p><br>
+      <img src="imagens/selecionar.PNG" alt="selecionar"><br>
+      <p>Sobre o campo selecionado clicar com o botão direito e escolher, aplicar filtro e então selecionar (existem outras opçõesw como voces podem ver na imagem abaixo):</p><br>
+      <img src="imagens/escolher.PNG" alt="escolher">
+      <h2 class="titulos" id="titulos">
+       Para auxliar com os operadores logicos, segue uma tabela para consulta rapida:
+      </h2><br>
+      <div class="titulos"> TABELA OLOGICO</div><br>  
+      <h2 class="titulos">
+        É possivel de forma bem simples gerar graficos no wireshark
+      </h2><br>
+        <p class="paragraf">A principio pode parecer estranho utilizar o wireshark para gerar graficos, mas esta funções pode ser extremamente util para enriquecer conteudos como relatorios pos mortem. Este é um exemplo de utilização, existem diversas outras possibilidades, ate mesmo auxiliar em um tshoot, muitas vezes olhar o problema por outro ponto de vista pode ajudar.
         </p><br>
       <h2 class="titulos">
-      Como montar um gráfico:
+           Segue abaixo um passo a passo para criação:
       </h2><br>
-        <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium, iste vero maiores quod officiis similique nostrum deserunt optio tenetur, earum eaque. Maxime minima iusto eveniet architecto totam harum quia est?
-        </p><br>
-      <h2 class="titulos">
-        Exemplo de gráfico da camada de rede:
-      </h2><br>
-        <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo voluptate fuga quo, nobis nulla porro excepturi adipisci voluptas, qui omnis, ea iste molestiae vitae provident! Ducimus incidunt sit fugiat?
-        </p><br>
-      <h2 class="titulos">
-           Exemplo de gráfico da camada de serviço:
-      </h2><br>
-        <p class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos explicabo voluptate fuga quo, nobis nulla porro excepturi adipisci voluptas, qui omnis, ea iste molestiae vitae provident! Ducimus incidunt sit fugiat?
-        </p><br>       
-    </article>
+      <ul class="lista">
+        <li>um</li>
+        <li>dois</li>
+        <li>tres</li>
+    </ul><br>
+        <div class="titulos"> PASSO A PASSO COM FOTOS</div><br>       
+    </article><br>
     <footer  class="footer" id="footer">
-        @GallaoDev - https://github.com/gallaodev <a class="footer_git" href="https://github.com/gallaodev"> Algum problema no site? crie uma issue no meu Github </a>
+        @GallaoDev - https://github.com/gallaodev <a class="footer_git" href="https://github.com/gallaodev" target="_blank"> Algum problema no site? crie uma issue no meu Github </a>
     </footer>
 
 <script>
@@ -54,6 +79,7 @@
 
         var t = document.getElementsByClassName("titulos")
         var p = document.getElementsByClassName("paragraf")
+        var l = document.getElementsByClassName("lista")
         var h = document.getElementById("header")
         var html = document.getElementById("html")
         var b = document.getElementById("corpo")
@@ -61,12 +87,16 @@
         var i;
                 
         for (i = 0; i < t.length; i++) {
-        t[i].style.color = "#FD8239",
+        t[i].style.color = "black",
         t[i].style.background = "white"}
         
         for (i = 0; i < p.length; i++) {
         p[i].style.color = "black",     
         p[i].style.background = "white"}
+
+        for (i = 0; i < l.length; i++) {
+        l[i].style.color = "black",
+        l[i].style.background = "white"}
        
         h.style.background = "white"
         b.style.background = "white"
@@ -77,6 +107,7 @@
 
         var t = document.getElementsByClassName("titulos")
         var p = document.getElementsByClassName("paragraf")
+        var l = document.getElementsByClassName("lista")
         var h = document.getElementById("header")
         var html = document.getElementById('html')
         var b = document.getElementById("corpo")
@@ -90,6 +121,10 @@
         for (i = 0; i < p.length; i++) {
         p[i].style.color = "white",     
         p[i].style.background = "#282536"}
+
+        for (i = 0; i < l.length; i++) {
+        l[i].style.color = "white",
+        l[i].style.background = "#282536"}
         
         h.style.background = "#282536"
         b.style.background = "#282536"
@@ -97,5 +132,6 @@
         img.src = "imagens/logo_inverter.PNG"
     }
 </script>
+
 </body>
 </html>

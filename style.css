@@ -43,6 +43,10 @@ footer{
 }
 
 .titulos{
+    color:black;
+}
+
+#titulos_1{
     color: #FD8239;
 }
 
@@ -61,4 +65,7 @@ footer{
 .footer_git{
     color: black;
     font-size: 12px;
+}
+.paragraf{
+    text-indent: 2em;
 }
