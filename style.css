@@ -48,10 +48,8 @@ h1{
 }
 
 .fox{
-    margin-block-start: 2%;
-    margin-inline: 1%;
     height:35%;
-    width: 45%;
+    width: 28%;
 }
 
 .titulos{
@@ -95,4 +93,7 @@ td{
 }
 th{
     border: 1px solid black;
+}
+img{
+    display: flex;
 }
