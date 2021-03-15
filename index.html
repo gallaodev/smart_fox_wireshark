@@ -22,7 +22,7 @@
     </header>
     <article class="content" id="content">
       <h1 class="titulos" id="titulos">
-      Você usa o wireshark? Ja teve dificuldades para montar um filtro? Sabia que é possivel montar gráficos no wireshark? Abaixo algumas dicas que podem te ajudar nestes assunto...
+      Você usa o wireshark? Ja teve dificuldades para montar um filtro? Sabia que é possivel montar gráficos no wireshark? Abaixo algumas dicas que podem te ajudar nestes assuntos...
       </h1><br>
         <p class="paragraf">
             É normal ter algumas dificuldades quando você começa a usar o wireshark.
@@ -36,7 +36,7 @@
         O Wireshark usa a tecnologia <strong>BPF - Berkeley Packet Filter</strong> e os campos de filtros podem ser divididos em: 
         </p><br>
         <ul class="lista">
-            <li>Identifiers - Dados que representam as camadas TCP/IP e também os protocolos. </li>
+            <li>Identifiers - Dados que representam as camadas TCP/IP e os seus protocolos. </li>
             <li>Qualifiers - Dados que subdivivem as camadas, podem ou não ser usado nos filtros. <br> Alguns exemplos são: Type (host, port, net), Direction (src, dst) e Proto (TCP or UDP).</li>
             <li>Logic Operators - São utilizados para definir as regras do filtro com realção aos values.</li>
             <li>Values - Valores que você deseja filtrar, podem ou nao ser usados nos filtros. </li>
@@ -48,7 +48,7 @@
       <ul class="lista">
           <li>Filtrando um ip de origem com valor 10.0.0.1: ip.src == 10.0.0.1 </li>
           <li>Filtrando um ip com protocolo na porta 53: ip.proto == 53, lembrando que para filtrar o protocolo direto sem o IP podemos usar ele como identifier</li>
-          <li>Filtrando o protocolo TCP com um source port especifico: tcp.srcport == 1147 </li>
+          <li>Filtrando o protocolo TCP com um source port específico: tcp.srcport == 1147 </li>
        </ul><br>
       <p class="paragraf">São muitas formas de fazer concorda, e mesmo com o wireshark te ajudando a completar os filtros voce ainda pode se perder neles. Sendo assim existe uma forma mais facil ainda de montar os filtros. Na area onde ficam as informações de um pacote em modo texto voce pode escolher um campo, selecionar simplemente clicando com botão esquerdo e clicando com botão direito escolher a opção aplicar um filtro e depois selecionado, pronto basta voce manipular operadores logicos e valor e voce com certeza vai chegar no valor procurado.</p><br>
       <p class="paragraf">Selecione o campo com o botão esquerdo do mouse:</p><br>
@@ -142,19 +142,19 @@
       <h2 class="titulos">
         É possivel de forma bem simples gerar gráficos no wireshark
       </h2><br>
-        <p class="paragraf">A principio parece estranho utilizar o wireshark para gerar gráficos, mas esta funções pode ser extremamente util para enriquecer conteudos como relatorios pos mortem. Este é um exemplo de utilização, existem diversas outras possibilidades, ate mesmo auxiliar em um tshoot, muitas vezes olhar o problema por outro ponto de vista pode ajudar.
+        <p class="paragraf">A princípio parece estranho utilizar o wireshark para gerar gráficos, mas esta função pode ser extremamente util para enriquecer conteudos como relatorios, por exemplo pos mortem. Este é um exemplo de utilização, existem diversas outras possibilidades, ate mesmo auxiliar em um tshoot, muitas vezes olhar o problema por outro ponto de vista pode ajudar.
         </p><br>
       <h2 class="titulos">
            Segue abaixo um passo a passo para criação:
       </h2><br>
       <ol class="lista">
-        <li>Escolha na barra de ferramentas Estatisticas.</li>
-        <li>Escolha a opção Graficos I/O</li>
+        <li>Escolha na barra de ferramentas Estatísticas.</li>
+        <li>Escolha a opção Gráficos I/O</li>
         <li>Vai aparece uma caixa para edição de graficos</li>
-        <li>Crie linhas para o seu grafico indicando cores e filtros (ja mencionei acima como fazer), cada filtro ira representar uma linha com uma cor diferente no seu grafico</li>
+        <li>Crie linhas para o seu gráfico indicando cores e filtros (ja mencionei acima como fazer), cada filtro ira representar uma linha com uma cor diferente no seu grafico</li>
         <li>Use sua criatividade para criar diferentes graficos e mostrar de forma mais simples uma ideia, teoria ou fato!</li>
     </ol><br>
-        <p class="paragraf"> Escolha na barra de tarefas o graficos I/O</p><br>
+        <p class="paragraf"> Escolha na barra de tarefas o gráficos I/O</p><br>
         <picture>
           <source media="(max-width: 400px)" srcset="imagens/escolher_grafico_300.PNG">
           <img src="imagens/escolher_grafico.PNG" alt="graficos">
@@ -164,7 +164,7 @@
           <source media="(max-width: 400px)" srcset="imagens/filtros_300px.PNG">
           <img src="imagens/filtros.PNG" alt="filtros"><br>
       </picture>
-        <p class="paragraf">Espero que este material tenha sido util de alguma forma para voce, um abraço e ate breve</p><br>
+        <p class="paragraf">Espero que este material tenha sido util de alguma forma para voce, um abraço e ate breve!</p><br>
     </article>
     <footer  class="footer" id="footer">
         <a class="footer_git" href="https://github.com/gallaodev" target="_blank">  @GallaoDev - https://github.com/gallaodev Algum problema no site? crie uma issue no meu Github </a><br>
