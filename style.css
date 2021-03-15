@@ -18,20 +18,26 @@ header{
     width:auto;
     height: auto;
     display:flex;
+    background-color: rgb(255, 254, 253);
+    border-color: white white coral white;
+    border-width: 5px;
+    border-style: solid;
 }
 
 article{
     text-align: justify;
     overflow:hidden;
+
 }
 
 footer{
+    margin: auto;
     font-size: 12px;
-    text-align: justify;
     color: black;
     bottom:0;
     width: auto;
-    background-image: linear-gradient(to bottom, white, rgb(192, 192, 192));
+    height: 35px;
+    background-image: linear-gradient(to bottom, rgb(246, 246, 246), rgb(161, 161, 161));
     display: flex;
 }
 
@@ -44,11 +50,12 @@ h1{
 .fox{
     margin-block-start: 2%;
     margin-inline: 1%;
-    height:25%;
-    width: 25%;
+    height:35%;
+    width: 45%;
 }
 
 .titulos{
+    margin-top: 25px;
     color:rgb(53, 53, 53);
 }
 
@@ -71,8 +78,10 @@ h1{
 }
 
 .footer_git{
+    margin: auto;
     color: black;
     font-size: 12px;
+    text-align: center;
 }
 .paragraf{
     text-indent: 2em;
