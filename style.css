@@ -27,10 +27,12 @@ article{
 
 footer{
     font-size: 12px;
+    text-align: justify;
     color: black;
     bottom:0;
     width: auto;
     background-image: linear-gradient(to bottom, white, rgb(192, 192, 192));
+    display: flex;
 }
 
 /* IMAGENS E CONTEUDO*/
